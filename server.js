@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import bodyParser from 'body-parser';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import App from './src/app';
 
@@ -35,12 +35,16 @@ app.get('*', (req, res) => {
           ${content}
         </div>
         <script src="client_bundle.js"></script>
-        <script src="register_worker.js"></script>
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('./sw.js');
+            });
+          }
+        </script>
       </body>
     </html>
   `;
-
-
   res.send(html)
 });
 
