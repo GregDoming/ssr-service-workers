@@ -35,6 +35,7 @@ app.get('*', (req, res) => {
           ${content}
         </div>
         <script src="client_bundle.js"></script>
+        <script src="register_worker.js"></script>
       </body>
     </html>
   `;
