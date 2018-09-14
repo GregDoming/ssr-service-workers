@@ -1,6 +1,5 @@
 const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   target: 'node',
@@ -10,11 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/build'
   },
-  plugins: [
-    // Other plugins...
-
-    new WorkboxPlugin.GenerateSW()
-  ],
   module: {
     rules: [
       {
