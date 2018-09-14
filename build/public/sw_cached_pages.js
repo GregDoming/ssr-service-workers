@@ -2,7 +2,8 @@
 const cacheName = 'v1'; // Change to v2, see what happens
 
 const cacheAssets = [
-  'indexTEST.html'
+  'indexTEST.html',
+  'client_bundle.js'
 ];
 
 // Call Install Event
